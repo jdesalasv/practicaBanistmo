@@ -5,11 +5,15 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
+import pruebaBanistmo.model.BancolombiaData;
+import pruebaBanistmo.questions.Respuesta;
 import pruebaBanistmo.tasks.Access;
 import pruebaBanistmo.tasks.OpenUp;
+import java.util.List;
 
 public class PruebaBanistmostepdefinitions {
 
@@ -34,8 +38,9 @@ public class PruebaBanistmostepdefinitions {
     }
 
     @Then("^validar que la informacion es correcta$")
-    public void validarQueLaInformacionEsCorrecta() {
-        // Write code here that turns the phrase above into concrete actions
+    public void validarQueLaInformacionEsCorrecta(List<BancolombiaData> bancolombiaData) {
+
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Respuesta.deLa(bancolombiaData.get(0).getStrNombrePdf())));
 
     }
 

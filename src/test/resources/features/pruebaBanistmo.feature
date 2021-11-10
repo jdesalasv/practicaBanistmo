@@ -9,6 +9,8 @@
     Given than Jahaziel needs to enter Bancolombia para descargar el informe
     When ingregar a la seccion donde esta el informe
     Then validar que la informacion es correcta
+      |strNombrePdf                                     |
+      |Presentación de PowerPoint|
 
 
 
